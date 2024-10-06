@@ -1,0 +1,28 @@
+{
+    "name": "image-metadata-extraction-with-langchain-and-llama-3-2",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.ts",
+    "type": "module",
+    "engines": {
+        "node": ">=22.9.0"
+    },
+    "scripts": {
+        "start": "tsx --env-file=.env index.ts",
+        "build": "tsc"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {
+        "tsx": "^3.0.0",
+        "typescript": "^5.0.0"
+    },
+    "dependencies": {
+        "@huggingface/inference": "^2.8.1",
+        "@langchain/community": "^0.3.4",
+        "@langchain/core": "^0.3.7",
+        "zod": "^3.23.8",
+        "zod-to-json-schema": "^3.23.3"
+    }
+}
