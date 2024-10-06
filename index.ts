@@ -16,8 +16,6 @@ const imageSchema = z
     .describe("Information about a person.");
 
 const extractJsonFromOutput = (message: string) => {
-    console.log(message);
-
     const pattern = /```json\s*((.|\n)*?)\s*```/gs;
 
     const matches = pattern.exec(message);
