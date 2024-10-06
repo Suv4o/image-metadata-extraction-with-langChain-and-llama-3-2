@@ -11,7 +11,11 @@ const imageSchema = z
             .describe(
                 "Tags that might be relevant to the photo for example: 'beach', 'sunset', 'people' etc. Give at lease 5 tags"
             ),
-        location: z.string().describe("Location of the photo based on the title of the image or the context"),
+        location: z
+            .string()
+            .describe(
+                "Location of the photo based on the title of the image or the context. Try to include the state and the country if possible"
+            ),
     })
     .describe("Information about a person.");
 
@@ -31,7 +35,7 @@ const extractJsonFromOutput = (message: string) => {
     }
 };
 
-const imageUrl = "https://github.com/Suv4o/wallpaper-images/blob/master/89-Image-Carrington-Falls.jpg?raw=true";
+const imageUrl = "https://github.com/Suv4o/wallpaper-images/blob/master/41-Image-On-The-Edge-Together.jpg?raw=true";
 
 const SYSTEM_PROMPT_TEMPLATE = `### Image URL:
 ${imageUrl}

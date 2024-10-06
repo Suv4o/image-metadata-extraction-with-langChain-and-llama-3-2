@@ -1,8 +1,7 @@
 {
     "name": "image-metadata-extraction-with-langchain-and-llama-3-2",
     "version": "1.0.0",
-    "description": "",
-    "main": "index.ts",
+    "description": "Langchain, LangGraph and llama-3-2 integration for image metadata extraction",
     "type": "module",
     "engines": {
         "node": ">=22.9.0"
@@ -15,8 +14,8 @@
     "author": "",
     "license": "ISC",
     "devDependencies": {
-        "tsx": "^3.0.0",
-        "typescript": "^5.0.0"
+        "tsx": "^4.19.1",
+        "typescript": "^5.6.2"
     },
     "dependencies": {
         "@huggingface/inference": "^2.8.1",
