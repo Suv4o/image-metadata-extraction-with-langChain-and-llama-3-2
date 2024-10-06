@@ -16,6 +16,8 @@ const imageSchema = z
     .describe("Information about a person.");
 
 const extractJsonFromOutput = (message: string) => {
+    console.log(message);
+
     const pattern = /```json\s*((.|\n)*?)\s*```/gs;
 
     const matches = pattern.exec(message);
@@ -31,7 +33,7 @@ const extractJsonFromOutput = (message: string) => {
     }
 };
 
-const imageUrl = "https://github.com/Suv4o/wallpaper-images/blob/master/83-Image-Clifton-Springs-Oct-2022.jpg?raw=true";
+const imageUrl = "https://github.com/Suv4o/wallpaper-images/blob/master/89-Image-Carrington-Falls.jpg?raw=true";
 
 const SYSTEM_PROMPT_TEMPLATE = `### Image URL:
 ${imageUrl}
@@ -50,7 +52,7 @@ const model = new HuggingFaceInference({
     apiKey: process.env.HF_API_KEY,
 });
 
-const query = "Describe this image in one sentence.";
+const query = "Extract information from the image";
 
 const promptValue = await prompt.invoke({
     schema: zodToJsonSchema(imageSchema),
@@ -66,4 +68,4 @@ const res = await chain.invoke({
     query,
 });
 
-console.log({ res });
+console.log(res);
